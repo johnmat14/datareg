@@ -109,10 +109,9 @@ input[type="submit"]:focus
 
 .right-box .signinwith
 {
-    display: block;
     margin-bottom: 40px;
     font-size: 28px;
-    color: #FFFF00;
+    color: #FFFFff;
     text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -125,7 +124,7 @@ button.social
     height: 36px;
     border: none;
     border-radius: 2px;
-    color: #FFFF00;
+    color: #FFFF;
     font-family: sans-serif;
     font-weight: 500;
     transition: 0.2s ease;
