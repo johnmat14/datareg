@@ -112,7 +112,7 @@ input[type="submit"]:focus
     display: block;
     margin-bottom: 40px;
     font-size: 28px;
-    color: #fff;
+    color: #FFFF00;
     text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
