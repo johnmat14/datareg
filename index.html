@@ -1,0 +1,246 @@
+<div class="formbox-outer">
+<div style="display:none;">
+<img src="/css/imagescss/joinus.png" alt=""><img src="/css/imagescss/inputback.png" alt=""></div>
+<div class="landing-page">
+<div class="formbox">
+<div class="formtextborder">
+<!--<div class="formtext">GET ON THE LIST TODAY</div>-->
+<img src="/img/boxtext.png" alt=""><div class="signuplink">
+<a href="#"><img src="/Facebook/img/sfb.png" alt="" id="" title="Sign Up using Facebook" onclick="login('/users/fblogin/type_Individual', 'email,publish_stream');"></a><a href="/users/google/Glogin/type_Individual" title="Sign Up using Google"><img src="/img/sg.png" alt=""></a><a href="/users/LinkedinLogin/type_Individual" title="Sign Up using Linkedin"><img src="/img/sl.png" alt=""></a>
+</div>
+</div>
+<div class="formouterbox">
+
+<form action="/Users/LandingSignUp" id="UserLandingForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div><div class="inputleft">
+<input name="data[User][username]" value="Username" class="validate[required,custom[onlyUserName],ajax[ajaxUserCallPhp]]" id="uname" maxlength="255" type="text"></div>
+<div class="inputright">
+<input name="data[User][email]" value="E-mail Address" class="validate[required,custom[email],ajax[ajaxEmailCallPhp]]" id="email" maxlength="255" type="text"></div>
+<div class="clear"></div>
+<div class="inputleft">
+<div id="cpassdiv">
+<span id="password-clear" style="display: block;">Create Password</span>
+<input name="data[User][password]" class="validate[required]" id="UserPassword" value="" autocomplete="off" type="password"></div>
+</div>
+<div class="inputright">
+<div id="vpassdiv">
+<span id="vpass-clear" style="display: block;">Verify Password</span>
+<input name="data[User][cpassword]" class="validate[required,equals[UserPassword]]" id="vpassword" value="" autocomplete="off" style="z-index: 1200" type="password"></div>
+</div>
+<div class="clear"></div>
+<div style="margin-bottom: 10px;margin-top: 3px;">
+<input type="checkbox" id="terms" checked="checked"><label>I agree to data-reg <a href="/terms-of-service" target="_blank">Terms of service</a> and <a href="/privacy-policy" target="_blank">Privacy Policy</a></label>
+</div>
+<!--<a href="#" id="submit-form">
+<div class="joinus"></div>
+</a>
+--><div class="submit"><input class="joinus subbtn" type="submit" value=""></div><div style="float:right;padding-top:5px">
+<a href="/HireProjects/Contractor">Looking to hire? Click Here!</a></div>
+</form><div id="fb-root" class=" fb_reset"><script async="" src="http://connect.facebook.net/en_US/all.js"></script><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/MmH55ZI0Z2G.js?version=44#channel=f26556da20d482c&amp;origin=http%3A%2F%2Fworknhire.com" style="border: none;"></iframe></div><div></div></div></div><script type="text/javascript">
+//<![CDATA[
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '402954673077690', // App ID
+			channelURL : '../../Vendor/channel.php', // Channel File
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			oauth      : true, // enable OAuth 2.0
+			xfbml      : true  // parse XFBML
+		});
+	
+		
+		
+	};
+
+	// logs the user in the application and facebook
+	function login(redirection, perms){
+		perms = 'email,user_education_history,user_work_history,user_location,publish_stream,publish_actions';
+		FB.login(function (response) {
+			if(response.authResponse) {
+				// user is logged in
+				// console.log('Welcome!');
+				if(redirection != null && redirection != ''){
+					top.location.href = redirection;
+				}
+			} else {
+				// user could not log in
+				console.log('User cancelled login or did not fully authorize.');
+			}
+		}, {scope: perms});
+	}
+
+	// logs the user out of the application and facebook
+	function logout(redirection){
+		FB.logout(function(response) {
+			// user is logged out
+			// redirection if any
+			if(redirection != null && redirection != ''){
+				top.location.href = redirection;
+			}
+		});
+	}
+
+	// Load the SDK Asynchronously
+	(function() {
+	var e = document.createElement('script'); e.async = true;
+	e.src = document.location.protocol 
+	+ '//connect.facebook.net/en_US/all.js';
+	document.getElementById('fb-root').appendChild(e);
+	}());
+//]]>
+</script></div>
+</div>
+</div>
+<script language="javascript">
+ $(document).ready(function() {
+	 $('#UserPassword').focus(function() {
+	     $('#password-clear').hide();
+	   //  $('#password-password').show();
+	    // $('#password-password').focus();
+	 });
+	 $('#UserPassword').blur(function() {
+	     if($('#UserPassword').val() == '') {
+	         $('#password-clear').show();
+	      //   $('#password-password').hide();
+	     }
+	 });
+
+	// $('#vpass-clear').show();
+	// $('#vpassword').hide();
+
+	 $('#vpassword').focus(function() {
+	     $('#vpass-clear').hide();
+	    // $('#vpassword').show();
+	     //$('#vpassword').focus();
+	 });
+	 $('#vpassword').blur(function() {
+	     if($('#vpassword').val() == '') {
+	         $('#vpass-clear').show();
+	       //  $('#vpassword').hide();
+	     }
+	 });
+	 
+ });
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	
+	var value1 = 'Username';
+	var value2 = 'E-mail Address';
+	var value3 = 'Create Password';
+	var value4 = 'Verify Password';
+
+	
+jQuery('#uname').focus(function(){
+			var check1 = jQuery('#uname').val();
+			if(check1==value1){
+				
+			jQuery('#uname').val('');
+			}
+			else{
+				jQuery('#uname').val(check1);
+				}
+			
+		});
+		
+		jQuery('#uname').blur(function(){
+			var check = jQuery('#uname').val();
+			if(check==""){
+				jQuery('#uname').val(value1);
+			}
+		});
+		
+		jQuery('#email').focus(function(){
+			var check1 = jQuery('#email').val();
+			if(check1==value2){
+				
+			jQuery('#email').val('');
+			}
+			else{
+				jQuery('#email').val(check1);
+				}
+			
+		});
+		
+		jQuery('#email').blur(function(){
+			var check = jQuery('#email').val();
+			if(check==""){
+				jQuery('#email').val(value2);
+			}
+		});
+		
+		jQuery('#cpass').focus(function(){
+			$('#cpass').hide();
+			$('#passinp').show();
+		});
+		jQuery('#passinp').live('blur',function(){
+			$('#passinp').hide();
+			$('#cpass').show();
+		});
+	
+		
+		jQuery('#vpass').focus(function(){
+			var check1 = jQuery('#vpass').val();
+			if(check1==value4){
+				
+			jQuery('#vpass').val('');
+			}
+			else{
+				jQuery('#vpass').val(check1);
+				}
+			
+		});
+		
+		jQuery('#vpass').blur(function(){
+			var check = jQuery('#vpass').val();
+			if(check==""){
+				jQuery('#vpass').val(value4);
+			}
+		});
+
+		
+});
+</script>
+<script>
+            
+		// This method is called right before the ajax form validation request
+		// it is typically used to setup some visuals ("Please wait...");
+		// you may return a false to stop the request 
+		function beforeCall(form, options){
+			if (!$('#terms').attr('checked')) {			
+				alert('Please agree to terms and conditions to create an account');
+				return false;
+			}else {
+				startloading();
+			}
+			
+		}
+            
+		// Called once the server replies to the ajax form validation request
+		function ajaxValidationCallback(status, form, json, options){
+			endloading();
+			if (window.console) 
+				console.log(status);
+			if(json.error) {
+				showJavaScriptMessage(json);
+			}else {	
+				if (status === true) {
+					showJavaScriptMessage(json);
+					window.location = json.redirect;
+				}
+			}
+		}
+		
+            
+		jQuery(document).ready(function(){
+				jQuery("#UserLandingForm").validationEngine({
+					ajaxFormValidation: true,
+					ajaxFormValidationMethod: 'post',
+					onAjaxFormComplete: ajaxValidationCallback,
+					 onBeforeAjaxFormValidation: beforeCall,
+					 validationEventTrigger :'submit',
+					 blur : false,
+					 scroll : false
+				});
+		});
+	</script></div>
